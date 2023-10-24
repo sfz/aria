@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kinwie_sfzwiki_wiki_backup"
+version = "0.1.0"
+description = "Kinwie' sfztest wiki backup"
+authors = ["redtide <redtid3@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+urllib3 = ">=2.0.7,<3"
+python = ">=3.8"
+mkdocs-material = "^9.3.1"
+requests = {extras = ["security"], version = "^2.31.0"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
