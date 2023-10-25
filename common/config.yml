@@ -1,0 +1,51 @@
+remote_branch:    "www"
+site_dir:         "_site"
+repo_name:        "GitHub"
+edit_uri:         "edit/master/docs/"
+
+extra:
+  generator: false
+
+extra_css:
+- common/style.css
+
+plugins:
+  search: {}
+
+markdown_extensions:
+  toc:
+    permalink: 🔗 # or `true` for the default anchor header icon
+  pymdownx.highlight:       # TODO: replace all these with highlight.js
+    anchor_linenums: true   #
+  pymdownx.inlinehilite: {} #
+  pymdownx.superfences: {}
+
+theme:
+  name: "material"
+  font: false
+  icon:
+    admonition:
+      abstract: fontawesome/solid/person-digging
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  palette:
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: "default"
+    toggle:
+      icon: "material/weather-night"
+      name: "Switch to dark mode"
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: "slate"
+    toggle:
+      icon: "material/weather-sunny"
+      name: "Switch to light mode"
+  features:
+  - content.action.edit
+  - content.action.view
+  - content.code.copy
+  - header.autohide
+  - navigation.footer
+  - navigation.top
