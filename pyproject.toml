@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "kinwie_sfzwiki_wiki_backup"
+name = "aria_wiki"
 version = "0.1.0"
-description = "Kinwie' sfztest wiki backup"
+description = "ARIA XML data format documentation"
 authors = ["redtide <redtid3@gmail.com>"]
 readme = "README.md"
 

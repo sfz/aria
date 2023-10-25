@@ -52,7 +52,7 @@ so it can be used in SFZ files set from [AriaProgram]\(s\), e.g.:
 | Name  | Type   | Description / Value(s)
 | ---   | ---    | ---
 | name  | string | the name  of the define, e.g.: "$sample_dir"
-| value | string | the value of the define, e.g.: "./some/path"
+| value | string | the value of the define, e.g.: "./some/path", numeric or other define name
 
 ## AriaGUI
 
