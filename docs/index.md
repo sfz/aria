@@ -17,7 +17,11 @@ the default bank, e.g. `sforzando.bank.xml` and GUI, e.g. `GUI/gui.xml`.
 This file is used for both [applications] and [instruments] products,
 and it can define audio, MIDI and/or GUI aspects of a product,
 depending on the properties they use.
+
 In case of instruments, it loads the related sfz file(s).
+It's digitally signed and should not be altered,
+but users who want to modify instruments can edit the .sfz and .xml files
+this file points to.
 
 ## [GUI]/*.xml
 
