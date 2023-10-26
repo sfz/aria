@@ -550,8 +550,11 @@ the default bank, e.g. <code>sforzando.bank.xml</code> and GUI, e.g. <code>GUI/g
 <h2 id="bankxml">*.bank.xml<a class="headerlink" href="#bankxml" title="Permanent link">🔗</a></h2>
 <p>This file is used for both <a href="bank_application/">applications</a> and <a href="bank_instrument/">instruments</a> products,
 and it can define audio, MIDI and/or GUI aspects of a product,
-depending on the properties they use.
-In case of instruments, it loads the related sfz file(s).</p>
+depending on the properties they use.</p>
+<p>In case of instruments, it loads the related sfz file(s).
+It's digitally signed and should not be altered,
+but users who want to modify instruments can edit the .sfz and .xml files
+this file points to.</p>
 <h2 id="guixml"><a href="gui/">GUI</a>/*.xml<a class="headerlink" href="#guixml" title="Permanent link">🔗</a></h2>
 <p>One or more gui file(s) are usually located in a <code>GUI</code> directory for
 any product type, instrument or application.
