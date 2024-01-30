@@ -23,12 +23,6 @@ It's digitally signed and should not be altered,
 but users who want to modify instruments can edit the .sfz and .xml files
 this file points to.
 
-## [GUI]/*.xml
-
-One or more gui file(s) are usually located in a `GUI` directory for
-any product type, instrument or application.
-Contains various [Widgets] definitions.
-
 ## *.[ariax] presets
 
 TODO
@@ -41,6 +35,5 @@ TODO
 [AriaSetup]:    ariasetup.md
 [applications]: bank_application.md
 [instruments]:  bank_instrument.md
-[GUI]:          gui.md
 [Widgets]:      widgets.md
 [ariax]:        ariax.md

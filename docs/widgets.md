@@ -1,6 +1,8 @@
 # Widgets
 
-## CommandButton
+## Regular
+
+### CommandButton
 
 A button executing a command when pushed.
 The background image is composed vertically of 2 frames, one for each button state.
@@ -30,26 +32,7 @@ Some of possible commands:
 | launch_url    | value in `data0`
 | license       | or `license_NNNN`
 
-## GUIContainer
-
-An abstract class / layout to contain GUI pages,
-used in [TabView](#tabview) Panes.
-
-```xml
-<GUIContainer path="gui_settings.xml"/>
-```
-
-| Name         | Type   | Description / Value(s)
-| ---          | ---    | ---
-| eslot        | int    | TODO
-| param        | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
-| param_offset | int    | TODO
-| path         | string | xml filename of the contained GUI or define macro *ID
-| slot         | int    | TODO
-| xoffset      | int    | TODO: might be border / margin / padding value
-| yoffset      | int    | TODO: might be border / margin / padding value
-
-## Keyboard
+### Keyboard
 
 A piano keyboard.
 
@@ -78,7 +61,7 @@ A piano keyboard.
 | image3        | string | filename for the shadow overlaid on the disabled keys
 | image4        | string | filename for the shadow overlaid on the key switches
 
-## Knob
+### Knob
 
 Rotary controller, using a vertical multi frame image.
 
@@ -100,7 +83,7 @@ Rotary controller, using a vertical multi frame image.
 | param    | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 | vdefault | float  | the default value
 
-## Label
+### Label
 
 A text label to display some value set from another control,
 associated with the same `param`.
@@ -122,7 +105,7 @@ associated with the same `param`.
 | transparent   | int    | if 1, use a transparent background
 | vdefault      | float  | the default value
 
-## DragLabel
+### DragLabel
 
 A label that displays a value that can be changed by clicking and moving the mouse
 over it; up and down or left and right.
@@ -148,7 +131,7 @@ over it; up and down or left and right.
 | transparent   | int    | if 1, use a transparent background
 | vdefault      | float  | the default value
 
-## OnOffButton
+### OnOffButton
 
 A switch button, using a 2 frames image like [CommandButton](#commandbutton).
 
@@ -165,7 +148,7 @@ A switch button, using a 2 frames image like [CommandButton](#commandbutton).
 | inverse       | int    | if 1, the on / off image frames are read in reverse
 | param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 
-## NumericTextBox
+### NumericTextBox
 
 A composite widget with a DragLabel on the left and a button on the right.
 When the button is pressed, a textbox appears to permit to digit the value to set.
@@ -190,7 +173,7 @@ When the button is pressed, a textbox appears to permit to digit the value to se
 | param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 | transparent   | int    | if 1, use a transparent background
 
-## OptionMenu
+### OptionMenu
 
 A LMB / RMB clickable label area to display a menu.
 
@@ -222,7 +205,7 @@ A LMB / RMB clickable label area to display a menu.
 | transparent   | int   | if 1, use a transparent background
 | vdefault      | float | the default value
 
-### OptionItem
+#### OptionItem
 
 OptionMenu item.
 
@@ -231,7 +214,7 @@ OptionMenu item.
 | name  | string | the menuitem label
 | value | float  | the value associated e.g.: 0.5678
 
-## `<PrefixName>`Menu
+### `<PrefixName>`Menu
 
 Similar to `OptionMenu` above, without items specified in XML.<br>
 `PrefixName` varies, e.g.: `FileMenu`/`KSMenu`/`OutputMenu`/`PresetMenu`.<br>
@@ -268,7 +251,7 @@ widget.
 | transparent          | int    | if 1, use a transparent background
 | type                 | URL    | TODO: same as target
 
-## PopupOverlay
+### PopupOverlay
 
 Overlay widget, usually a transparent panel over the full client size
 of the application window with an OK label at the bottom right.
@@ -286,7 +269,7 @@ Can be closed by clicking on it.
 | x / y / w / h | int   | coordinates and size
 | color_back    | RGBA  | background color (e.g.: #00000060)
 
-## ProgressBar
+### ProgressBar
 
 Used to view the loading progress of a sampled instrument.
 
@@ -300,7 +283,7 @@ Used to view the loading progress of a sampled instrument.
 | image         | string | image filename for a 2 frames progress bar
 |               |        | TODO: empty and full? Verify this
 
-## Rect
+### Rect
 
 A drawn rectangle.
 
@@ -317,7 +300,7 @@ A drawn rectangle.
 | fill_color    | RGBA  | fill color
 | frameWidth    | int   | TODO
 
-## Slider
+### Slider
 
 Same purpose as a [Knob](#knob), but with a linear, horizontal or vertical groove
 and a movable handle.
@@ -338,7 +321,7 @@ and a movable handle.
 | image_bg      | string | the name of the image file (slider trail)
 | orientation   | enum   | horizontal / vertical
 
-## SpecialDigitKnob
+### SpecialDigitKnob
 
 A clickable label that changes its value when keeping pressed the LMB and moving
 the mouse: down/left to decrease or up/right to increase its value.
@@ -373,7 +356,7 @@ Value can be positive or negative.
 | vmax               | int    | maximum value, e.g.: "100"
 | vmin               | int    | minimum value, e.g.: "-100"
 
-## Splash
+### Splash
 
 TODO: might be a splashscreen window
 
@@ -387,7 +370,7 @@ TODO: might be a splashscreen window
 | image         | string | the filename of the background image
 | url           | string | URL TODO: probably open in browser on image click
 
-## StaticImage
+### StaticImage
 
 ```xml
 <StaticImage x="0" y="0" w="775" h="335" image="aria_info_sfz.png" />
@@ -399,7 +382,7 @@ TODO: might be a splashscreen window
 | image         | string | the name of the image file
 | transparent   | int    | if 1, use a transparent background
 
-## StaticText
+### StaticText
 
 Non variable [Label](#label) like control
 
@@ -420,7 +403,7 @@ Non variable [Label](#label) like control
 | text          | string | label displayed text
 | transparent   | int    | if 1, use a transparent background
 
-## StepEditor
+### StepEditor
 
 Composed of a specified number of vertical bars, each of which represents the value of a single step;
 might be used as curve editor.
@@ -454,7 +437,75 @@ might be used as curve editor.
 | vmax                | int    | maximum value, e.g.: "15"
 | vmin                | int    | minimum value, e.g.: "0"
 
-## TabView
+## Containers
+
+### GUI
+
+One or more gui file(s) are usually located in a `GUI` directory for any product type,
+instrument or application. Contains the various widgets definitions.
+
+`GUI/aria_info.xml`:
+
+```xml
+<!--
+  It's a GUI file, describing an (opaque?) image with a rectangle area
+  of 775x330 size inside a 787x335 container area.
+-->
+<GUI w="787" h="335"  >
+  <StaticImage  x="0" y="0" w="775" h="330" image="Infotab.png"/>
+</GUI>
+```
+
+1st instrument set, `GUI/01-Kitchen-X.xml`:
+
+```xml
+<!--
+  Like above, but having also the GUI controls for CCs and the like over
+  a transparent (?) background image.
+-->
+<GUI w="775" h="335">
+  <StaticImage x="0" y="0" w="775" h="330" image="Control.png" transparent="1"/>
+
+  <!-- Other GUI widgets follows here (Sliders) -->
+</GUI>
+```
+
+The GUI node accepts the following parameters:
+
+| Name                    | Type    | Description / Values
+| ---                     | ---     | ---
+| generic_h / generic_w   | int     | TODO
+| generic_s               | int     | TODO
+| w / h                   | int     | size
+| DrawingBoundaries       | int     | TODO
+| color_back              | RGBA    | background color
+| color_border            | RGBA    | border color
+| color_DrawingBoundaries | RGBA    | TODO
+| color_text              | RGBA    | text color
+| font_size               | enum    | verysmall / small / normal / big / verybig
+| idleThrottle            | int     | TODO
+| image                   | string  | background image filename
+
+### GUIContainer
+
+An abstract class / layout to contain GUI pages,
+used in [TabView](#tabview) Panes.
+
+```xml
+<GUIContainer path="gui_settings.xml"/>
+```
+
+| Name         | Type   | Description / Value(s)
+| ---          | ---    | ---
+| eslot        | int    | TODO
+| param        | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
+| param_offset | int    | TODO
+| path         | string | xml filename of the contained GUI or define macro *ID
+| slot         | int    | TODO
+| xoffset      | int    | TODO: might be border / margin / padding value
+| yoffset      | int    | TODO: might be border / margin / padding value
+
+### TabView
 
 Tabbed control, with Panes as pages.
 
@@ -500,7 +551,7 @@ Tabbed control, with Panes as pages.
 | position         | enum   | tab buttons position: top / bottom / left / right
 | alignment        | enum   | tab buttons alignment: left / center / right
 
-### Pane
+#### Pane
 
 TabView' page pane.
 

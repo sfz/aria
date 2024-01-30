@@ -4,12 +4,4 @@ site_description: "ARIA wiki"
 site_author:      "redtide"
 site_url:         "https://redtide.github.io/aria"
 repo_url:         "https://github.com/redtide/aria/"
-copyright:        "Copyright &copy; 2023 redtide - Made with Material for MkDocs"
-nav:
-- index.md
-- ariasetup.md
-- bank_application.md
-- bank_instrument.md
-- gui.md
-- widgets.md
-- ariax.md
+copyright:        "Copyright &copy; 2023-2024 redtide - Made with Material for MkDocs"
