@@ -52,14 +52,14 @@ A piano keyboard.
 | Name          | Type   | Description / Value(s)
 | ---           | ---    | ---
 | x / y / w / h | int    | coordinates and size
-| offsetN       | int    | with N = 0 to 5, 6 in total TODO
-| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
-| start_key     | int    | first note key, e.g.: 0
-| end_key       | int    | last  note key, e.g.: 108
 | image         | string | filename for the enabled white keys when pressed and unpressed
 | image2        | string | filename for the enabled black keys when pressed and unpressed
 | image3        | string | filename for the shadow overlaid on the disabled keys
 | image4        | string | filename for the shadow overlaid on the key switches
+| offsetN       | int    | with N = 0 to 5, 6 in total TODO
+| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
+| start_key     | int    | first note key, e.g.: 0
+| end_key       | int    | last  note key, e.g.: 108
 
 ### Knob
 
@@ -131,23 +131,6 @@ over it; up and down or left and right.
 | transparent   | int    | if 1, use a transparent background
 | vdefault      | float  | the default value
 
-### OnOffButton
-
-A switch button, using a 2 frames image like [CommandButton](#commandbutton).
-
-```xml
-<OnOffButton image="keyboard/pedal_l.png" param="67"
-  x="720" y="445" w="14" h="35"
-/>
-```
-
-| Name          | Type   | Description / Value(s)
-| ---           | ---    | ---
-| x / y / w / h | int    | coordinates and size
-| image         | string | the name of the image file
-| inverse       | int    | if 1, the on / off image frames are read in reverse
-| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
-
 ### NumericTextBox
 
 A composite widget with a DragLabel on the left and a button on the right.
@@ -172,6 +155,23 @@ When the button is pressed, a textbox appears to permit to digit the value to se
 | offset        | int    | value offset
 | param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 | transparent   | int    | if 1, use a transparent background
+
+### OnOffButton
+
+A switch button, using a 2 frames image like [CommandButton](#commandbutton).
+
+```xml
+<OnOffButton image="keyboard/pedal_l.png" param="67"
+  x="720" y="445" w="14" h="35"
+/>
+```
+
+| Name          | Type   | Description / Value(s)
+| ---           | ---    | ---
+| x / y / w / h | int    | coordinates and size
+| image         | string | the name of the image file
+| inverse       | int    | if 1, the on / off image frames are read in reverse
+| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 
 ### OptionMenu
 
@@ -296,7 +296,7 @@ A drawn rectangle.
 | Name          | Type  | Description / Value(s)
 | ---           | ---   | ---
 | x / y / w / h | int   | coordinates and size
-| drawMode      | enum  | filled - TODO: other draw modes
+| drawMode      | enum  | filled / stroked
 | fill_color    | RGBA  | fill color
 | frameWidth    | int   | TODO
 
@@ -316,10 +316,10 @@ and a movable handle.
 | Name          | Type   | Description / Value(s)
 | ---           | ---    | ---
 | x / y / w / h | int    | coordinates and size
-| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
-| image_handle  | string | the name of the image file (slider handle)
 | image_bg      | string | the name of the image file (slider trail)
+| image_handle  | string | the name of the image file (slider handle)
 | orientation   | enum   | horizontal / vertical
+| param         | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 
 ### SpecialDigitKnob
 
@@ -344,12 +344,12 @@ Value can be positive or negative.
 | base               | int    | TODO
 | digit_max          | int    | maximum value, e.g.: "100"  TODO: what's the difference with vmax?
 | digit_min          | int    | minimum value, e.g.: "-100" TODO: what's the difference with vmin?
+| granularity        | int    | changing value steps
 | image              | string | filename of the image used for the numeric values
 | minus_image        | string | filename of the image used as minus for negative values
 | plus_image         | string | filename of the image used as plus  for positive values
 | nbh                | int    | the number image height
 | nbw                | int    | the number image width
-| granularity        | int    | changing value steps
 | numbers            | int    | value size, e.g.: 2 for 0-99 or 3 for 0-100
 | param              | int    | numeric, possibly CC, or named id e.g.: 10 or DID_SOMETHING
 | show_leading_zeros | int    | whether to show leading 0s, e.g.: 000 to 100
@@ -423,10 +423,10 @@ might be used as curve editor.
 | ---                 | ---    | ---
 | x / y / w / h       | int    | coordinates and size
 | border_color        | RGBA   | bars border color
-| image               | string | the name of the background image file
 | editor_border_color | RGBA   | editor border color
 | fill_color          | RGBA   | bars color
 | zero_color          | RGBA   | TODO
+| image               | string | the relative path to the background image file
 | hoffset             | int    | TODO: might be border / margin / padding value
 | voffset             | int    | TODO: might be border / margin / padding value
 | nbstep              | int    | bars count
@@ -474,9 +474,9 @@ The GUI node accepts the following parameters:
 
 | Name                    | Type    | Description / Values
 | ---                     | ---     | ---
+| w / h                   | int     | size
 | generic_h / generic_w   | int     | TODO
 | generic_s               | int     | TODO
-| w / h                   | int     | size
 | DrawingBoundaries       | int     | TODO
 | color_back              | RGBA    | background color
 | color_border            | RGBA    | border color
@@ -544,12 +544,12 @@ Tabbed control, with Panes as pages.
 | Name             | Type   | Description / Value(s)
 | ---              | ---    | ---
 | x / y / w / h    | int    | coordinates and size
-| id               | string | the control id
-| color_selected   | RGBA   | TODO
+| alignment        | enum   | tab buttons alignment: left / center / right
 | color_deselected | RGBA   | TODO
+| color_selected   | RGBA   | TODO
+| id               | string | the control id
 | image            | string | image filename of the button background (2 frames: clicked and released)
 | position         | enum   | tab buttons position: top / bottom / left / right
-| alignment        | enum   | tab buttons alignment: left / center / right
 
 #### Pane
 
@@ -557,5 +557,5 @@ TabView' page pane.
 
 | Name   | Type  | Description / Value(s)
 | ---    | ---   | ---
-| image  | image | filename of the pane   background, optional
-| imageb | image | filename of the button background (2 frames: clicked and released)
+| image  | image | relative path to the pane   background image file, optional
+| imageb | image | relative path to the button background image file; 2 frames: clicked and released
